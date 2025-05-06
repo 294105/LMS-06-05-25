@@ -1,0 +1,193 @@
+/* Main container for the live coding section */
+.live-coding {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Heading styles */
+.live-coding h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #f5a623;
+}
+
+.live-coding h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #f5a623;
+}
+
+/* Label styles */
+.live-coding label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  color: #f5f5f5;
+}
+
+/* Select dropdown styles */
+.live-coding select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  background-color: #444;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #f5f5f5;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.live-coding select:focus {
+  border-color: #f5a623;
+  outline: none;
+}
+
+/* Textarea styles */
+.live-coding textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 20px;
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.live-coding textarea:focus {
+  border-color: #f5a623;
+  outline: none;
+}
+
+/* Run Code Button styles */
+.live-coding button.run-code {
+  width: 100%;
+  padding: 15px;
+  background-color: #f5a623;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.live-coding button.run-code:hover {
+  background-color: #f58e1f;
+}
+
+.live-coding button.run-code:focus {
+  outline: none;
+}
+
+/* Go Back and Refresh buttons container */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Go Back button styles */
+.action-buttons button.go-back {
+  width: 48%;
+  padding: 15px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons button.go-back:hover {
+  background-color: #45a049;
+}
+
+.action-buttons button.go-back:focus {
+  outline: none;
+}
+
+/* Refresh button styles */
+.action-buttons button.refresh {
+  width: 48%;
+  padding: 15px;
+  background-color: #f44336;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons button.refresh:hover {
+  background-color: #e53935;
+}
+
+.action-buttons button.refresh:focus {
+  outline: none;
+}
+
+/* Output area */
+.live-coding pre {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  min-height: 100px;
+  color: #f5f5f5;
+}
+
+/* Loading state text */
+.live-coding pre {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #f5a623;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .live-coding {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .live-coding h2 {
+    font-size: 2rem;
+  }
+
+  .live-coding textarea {
+    min-height: 80px;
+  }
+
+  .live-coding button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
