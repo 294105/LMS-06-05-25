@@ -7,6 +7,7 @@ const courseSchema = new mongoose.Schema({
   thumbnail: { type: String }, // could be image URL or file path
   tutor: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   enrolledStudents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+  assignments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Assignment' }],
   isPublished: { type: Boolean, default: false }
 }, { timestamps: true });
 

@@ -18,6 +18,7 @@ const codeRoutes = require('./routes/code.routes');
 const certificateRoutes = require('./routes/certificate.routes');
 // const enrollmentRoutes = require('./routes/enrollment.routes');
 const chatRoutes = require('./routes/chat.routes');
+const assignmentRoutes = require('./routes/assignment.routes');
 
 dotenv.config();
 connectDB();
@@ -71,6 +72,7 @@ app.use('/api/sections', sectionRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/code', codeRoutes);
 app.use('/api/certificates', certificateRoutes);
+app.use('/api/assignments', assignmentRoutes);
 // app.use('/api/enrollments', enrollmentRoutes);
 
 // Health check
