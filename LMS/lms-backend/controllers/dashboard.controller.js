@@ -2,6 +2,7 @@ const Course   = require('../models/course.model');
 const Progress = require('../models/progress.model');
 const Material = require('../models/material.model');
 const User     = require('../models/user.model');
+const Classroom = require('../models/classroom.model'); 
 
 
 // Student
@@ -68,6 +69,9 @@ exports.getAdminDashboard = async (req, res) => {
     // 4. Materials
     const totalMaterials = await Material.countDocuments();
 
+    // 5. Classroom count (new addition)
+    const totalClassrooms = await Classroom.countDocuments(); // Count total classrooms
+
     return res.json({
       users: {
         total: totalUsers,
@@ -85,6 +89,9 @@ exports.getAdminDashboard = async (req, res) => {
       },
       materials: {
         total: totalMaterials
+      },
+      classrooms: {
+        total: totalClassrooms // Only include total classrooms count
       }
     });
   } catch (err) {

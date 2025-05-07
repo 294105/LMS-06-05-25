@@ -3,6 +3,8 @@ const router = express.Router();
 const protect = require('../middlewares/auth');
 const permit = require('../middlewares/role');
 const Course = require('../models/course.model'); // ✅ ADD THIS
+const Classroom = require('../models/classroom.model');
+
 
 
 const { getStudentDashboard, getAdminDashboard, getTutorDashboard } = require('../controllers/dashboard.controller');

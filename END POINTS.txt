@@ -1,0 +1,177 @@
+GET - http://localhost:5000/api/dashboard/admin
+{
+    "users": {
+        "total": 4,
+        "admins": 1,
+        "tutors": 2,
+        "students": 1
+    },
+    "courses": {
+        "total": 3,
+        "published": 3,
+        "unpublished": 0
+    },
+    "enrollments": {
+        "total": 3
+    },
+    "materials": {
+        "total": 4
+    },
+    "classrooms": {
+        "total": 1
+    }
+}
+
+
+
+GET-http://localhost:5000/api/classrooms/get-all-classrooms
+{
+    "classrooms": [
+        {
+            "_id": "681ae53e7b3adce63d0d5e49",
+            "name": "React Basics",
+            "description": "Intro to React",
+            "tutor": {
+                "_id": "68107ff8b8d385ea3a1d5b73",
+                "name": "sk",
+                "email": "sankarkrishna2001@gmail.com"
+            },
+            "students": [
+                {
+                    "_id": "68108081b8d385ea3a1d5b8a",
+                    "name": "sad",
+                    "email": "shaikabdulraashid@gmail.com"
+                }
+            ],
+            "sections": [],
+            "assignments": [],
+            "createdBy": "681ad7faa428a24fb20b368b",
+            "createdAt": "2025-05-07T04:44:46.088Z",
+            "updatedAt": "2025-05-07T04:48:08.904Z",
+            "__v": 1
+        }
+    ]
+}
+
+
+
+
+
+
+GET-http://localhost:5000/api/classrooms/my-assignments
+{
+    "assignments": [
+        {
+            "_id": "681b01e252d292505568a15e",
+            "course": "681b00e67e5616c36aa1beb1",
+            "title": "Week 1 Project",
+            "description": "Submit a basic JS app",
+            "questionsPDF": "dummy.pdf",
+            "dueDate": "2025-05-10T00:00:00.000Z",
+            "submissions": [
+                {
+                    "student": "68108081b8d385ea3a1d5b8a",
+                    "answerPDF": "upload\\assignments\\1746601153693-java basics.pdf",
+                    "_id": "681b04c17a9d7795ac1929eb",
+                    "submittedAt": "2025-05-07T06:59:13.709Z"
+                }
+            ],
+            "createdAt": "2025-05-07T06:46:58.834Z",
+            "updatedAt": "2025-05-07T06:59:13.715Z",
+            "__v": 1
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+POST-http://localhost:5000/api/classrooms/create-classroom
+{
+    "message": "Classroom created successfully",
+    "newClassroom": {
+        "name": "React Basics",
+        "description": "Intro to React",
+        "tutor": "68107ff8b8d385ea3a1d5b73",
+        "students": [],
+        "sections": [],
+        "assignments": [],
+        "createdBy": "681ad7faa428a24fb20b368b",
+        "_id": "681ae53e7b3adce63d0d5e49",
+        "createdAt": "2025-05-07T04:44:46.088Z",
+        "updatedAt": "2025-05-07T04:44:46.088Z",
+        "__v": 0
+    }
+}
+
+
+
+
+POST-http://localhost:5000/api/classrooms/assign-students
+{
+    "message": "Students added to classroom",
+    "classroom": {
+        "_id": "681ae53e7b3adce63d0d5e49",
+        "name": "React Basics",
+        "description": "Intro to React",
+        "tutor": "68107ff8b8d385ea3a1d5b73",
+        "students": [
+            "68108081b8d385ea3a1d5b8a"
+        ],
+        "sections": [],
+        "assignments": [],
+        "createdBy": "681ad7faa428a24fb20b368b",
+        "createdAt": "2025-05-07T04:44:46.088Z",
+        "updatedAt": "2025-05-07T04:48:08.904Z",
+        "__v": 1
+    }
+}
+
+
+
+
+
+
+POST-http://localhost:5000/api/classrooms/add-assignment
+INPUT
+{
+  "classroomId": "681b00e67e5616c36aa1beb1",
+  "title": "Week 1 Project",
+  "description": "Submit a basic JS app",
+  "dueDate": "2025-05-10"
+}
+OUTPUT
+{
+    "message": "Assignment added",
+    "assignment": {
+        "course": "681b00e67e5616c36aa1beb1",
+        "title": "Week 1 Project",
+        "description": "Submit a basic JS app",
+        "questionsPDF": "dummy.pdf",
+        "dueDate": "2025-05-10T00:00:00.000Z",
+        "_id": "681b01e252d292505568a15e",
+        "submissions": [],
+        "createdAt": "2025-05-07T06:46:58.834Z",
+        "updatedAt": "2025-05-07T06:46:58.834Z",
+        "__v": 0
+    }
+}
+
+
+
+
+
+
+
+POST-http://localhost:5000/api/classrooms/submit-assignment/681b01e252d292505568a15e     
+//student submitting the assignment  key- pdf
+
+

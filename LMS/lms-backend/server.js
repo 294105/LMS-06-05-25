@@ -19,10 +19,12 @@ const certificateRoutes = require('./routes/certificate.routes');
 // const enrollmentRoutes = require('./routes/enrollment.routes');
 const chatRoutes = require('./routes/chat.routes');
 const assignmentRoutes = require('./routes/assignment.routes');
+const createDefaultAdmin = require('./createDefaultAdmin'); // adjust path
+const classroomRoutes = require('./routes/classroom.routes');
 
 dotenv.config();
 connectDB();
-
+createDefaultAdmin();
 const app = express();
 const server = http.createServer(app);
 
@@ -73,7 +75,19 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/code', codeRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use('/api/assignments', assignmentRoutes);
+app.use('/api/classrooms', classroomRoutes);
 // app.use('/api/enrollments', enrollmentRoutes);
+
+
+
+
+
+
+
+
+
+
+
 
 // Health check
 app.get('/', (req, res) => {
